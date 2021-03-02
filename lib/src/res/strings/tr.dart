@@ -132,7 +132,7 @@ Map<String, String> tr = {
 	"KP": "Kuzey Kore",
 	"MP": "Kuzey Mariana Adaları",
 	"CU": "Küba",
-	"LA": ​​"Laos",
+	"LA": "Laos",
 	"LV": "Letonya",
 	"LB": "Lübnan",
 	"LS": "Lesotho",
