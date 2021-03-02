@@ -6,6 +6,7 @@ import 'res/strings/es.dart';
 import 'res/strings/gr.dart';
 import 'res/strings/pt.dart';
 import 'res/strings/tw.dart';
+import 'res/strings/tr.dart';
 
 class CountryLocalizations {
   final Locale locale;
@@ -54,6 +55,8 @@ class CountryLocalizations {
         return es[countryCode];
       case 'pt':
         return pt[countryCode];
+	  case 'tr':
+        return tr[countryCode];	
       case 'en':
       default:
         return en[countryCode];
@@ -73,6 +76,7 @@ class _CountryLocalizationsDelegate
       'el',
       'es',
       'pt',
+	  'tr'
     ].contains(locale.languageCode);
   }
 
