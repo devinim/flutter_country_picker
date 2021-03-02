@@ -55,7 +55,7 @@ class CountryLocalizations {
         return es[countryCode];
       case 'pt':
         return pt[countryCode];
-	  case 'tr':
+      case 'tr':
         return tr[countryCode];	
       case 'en':
       default:
