@@ -30,9 +30,10 @@ class CountryListView extends StatefulWidget {
     this.exclude,
     this.countryFilter,
     this.showPhoneCode = false,
-  })  : assert(onSelect != null),
+  })
+      : assert(onSelect != null),
         assert(exclude == null || countryFilter == null,
-            'Cannot provide both exclude and countryFilter'),
+        'Cannot provide both exclude and countryFilter'),
         super(key: key);
 
   @override
@@ -43,13 +44,24 @@ class _CountryListViewState extends State<CountryListView> {
   List<Country> _countryList;
   List<Country> _filteredList;
   TextEditingController _searchController;
+
   @override
   void initState() {
     super.initState();
     _searchController = TextEditingController();
 
     _countryList =
-        countryCodes.map((country) => Country.from(json: country)).toList();
+        countryCodes.map((country) {
+          Country countryObj = Country.from(json: country);
+
+          var cName = CountryLocalizations.of(context)
+              ?.countryName(countryCode: countryObj.countryCode) ??
+              countryObj.name;
+
+          countryObj.name = cName;
+
+          return countryObj;
+        }).toList();
 
     //Remove duplicates country if not use phone code
     if (!widget.showPhoneCode) {
@@ -59,11 +71,11 @@ class _CountryListViewState extends State<CountryListView> {
 
     if (widget.exclude != null) {
       _countryList.removeWhere(
-          (element) => widget.exclude.contains(element.countryCode));
+              (element) => widget.exclude.contains(element.countryCode));
     }
     if (widget.countryFilter != null) {
       _countryList.removeWhere(
-          (element) => !widget.countryFilter.contains(element.countryCode));
+              (element) => !widget.countryFilter.contains(element.countryCode));
     }
 
     _filteredList = <Country>[];
@@ -141,7 +153,7 @@ class _CountryListViewState extends State<CountryListView> {
               Expanded(
                 child: Text(
                   CountryLocalizations.of(context)
-                          ?.countryName(countryCode: country.countryCode) ??
+                      ?.countryName(countryCode: country.countryCode) ??
                       country.name,
                   style: const TextStyle(fontSize: 16),
                 ),

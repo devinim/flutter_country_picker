@@ -13,7 +13,7 @@ class Country {
   final int level;
 
   ///The country name in English
-  final String name;
+  String name;
 
   ///An example of a telephone number without the phone code
   final String example;
