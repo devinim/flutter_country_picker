@@ -228,6 +228,7 @@ Map<String, String> tr = {
 	"TV": "Tuvalu",
 	"TN": "Tunus",
 	"TR": "Türkiye",
+	"TRK": "Kuzey Kıbrıs Türk Cumhuriyeti",
 	"TM": "Türkmenistan",	
 	"OM": "Umman",
 	"UG": "Uganda",
@@ -244,6 +245,9 @@ Map<String, String> tr = {
 	"YE": "Yemen",
 	"GR": "Yunanistan",
 	"ZM": "Zambiya",
-	"ZW": "Zimbabve", 
+	"ZW": "Zimbabve",
+"FRP": "Fransa (Paris)",	
+"GBL": "İngiltere (Londra)",
+"RUM": "Rusya (Moskova)",
 	"search": "Ara",
 };

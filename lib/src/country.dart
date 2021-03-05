@@ -6,6 +6,8 @@ class Country {
   ///The country phone code
   final String phoneCode;
 
+  final String group;
+
   ///The country code, ISO (alpha-2)
   final String countryCode;
   final int e164Sc;
@@ -45,6 +47,7 @@ class Country {
     this.fullExampleWithPlusSign,
     this.displayNameNoCountryCode,
     this.e164Key,
+    this.group
   });
 
   Country.from({Map<String, dynamic> json})
@@ -58,10 +61,12 @@ class Country {
         displayName = json['display_name'] as String,
         fullExampleWithPlusSign = json['full_example_with_plus_sign'] as String,
         displayNameNoCountryCode = json['display_name_no_e164_cc'] as String,
-        e164Key = json['e164_key'] as String;
+        e164Key = json['e164_key'] as String,
+        group = json['group'] as String;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+    data['group'] = phoneCode;
     data['e164_cc'] = phoneCode;
     data['iso2_cc'] = countryCode;
     data['e164_sc'] = e164Sc;
